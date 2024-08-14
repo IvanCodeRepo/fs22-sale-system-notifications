@@ -15,30 +15,30 @@ SaleSystemNotifications.lastNotifiedId = 0
 
 
 function SaleSystemNotifications:loadMap(name)
-	SaleSystemNotifications.readXml()
+    SaleSystemNotifications.readXml()
 
-	if SaleSystemNotifications.Settings.NotifyNewSales ~= nil and SaleSystemNotifications.Settings.NotifyNewSales then
-		SaleSystemNotifications.AppendFunctions()
-	end
+    if SaleSystemNotifications.Settings.NotifyNewSales ~= nil and SaleSystemNotifications.Settings.NotifyNewSales then
+        SaleSystemNotifications.AppendFunctions()
+    end
 end
 
 function SaleSystemNotifications.readXml()
-	local xmlFilename = "settings.xml"
-	local path = SaleSystemNotifications.dir .. "settings.xml"
-	local object = "SaleSystemNotifications"
-	local key = "SaleSystemNotifications.Settings"
+    local xmlFilename = "settings.xml"
+    local path = SaleSystemNotifications.dir .. "settings.xml"
+    local object = "SaleSystemNotifications"
+    local key = "SaleSystemNotifications.Settings"
 
-	local xmlFileId = loadXMLFile(object, path)
+    local xmlFileId = loadXMLFile(object, path)
 
-	SaleSystemNotifications.Settings.NotifyNewSales = getXMLBool(xmlFileId, key.."#NotifyNewSales")
+    SaleSystemNotifications.Settings.NotifyNewSales = getXMLBool(xmlFileId, key.."#NotifyNewSales")
 end
 
 function SaleSystemNotifications.init()
-	if g_currentMission.vehicleSaleSystem.items ~= nil then
-		for _,Item in pairs(g_currentMission.vehicleSaleSystem.items) do
+    if g_currentMission.vehicleSaleSystem.items ~= nil then
+        for _,Item in pairs(g_currentMission.vehicleSaleSystem.items) do
             SaleSystemNotifications.addNotification(Item)
-		end
-	end
+        end
+    end
 end
 
 function SaleSystemNotifications.addNotification(Item)
@@ -66,16 +66,16 @@ function SaleSystemNotifications.addNotification(Item)
 end
 
 function SaleSystemNotifications.OnAddItem()
-	if g_currentMission.vehicleSaleSystem.items ~= nil then
-		for _,Item in pairs(g_currentMission.vehicleSaleSystem.items) do
+    if g_currentMission.vehicleSaleSystem.items ~= nil then
+        for _,Item in pairs(g_currentMission.vehicleSaleSystem.items) do
             SaleSystemNotifications.addNotification(Item)
-		end
-	end
+        end
+    end
 end
 
 function SaleSystemNotifications.AppendFunctions()
-	FSBaseMission.onFinishedLoading = Utils.appendedFunction(FSBaseMission.onFinishedLoading, SaleSystemNotifications.init)
-	VehicleSaleSystem.addSale = Utils.appendedFunction(VehicleSaleSystem.addSale, SaleSystemNotifications.OnAddItem)
+    FSBaseMission.onFinishedLoading = Utils.appendedFunction(FSBaseMission.onFinishedLoading, SaleSystemNotifications.init)
+    VehicleSaleSystem.addSale = Utils.appendedFunction(VehicleSaleSystem.addSale, SaleSystemNotifications.OnAddItem)
 end
 
 addModEventListener(SaleSystemNotifications)
