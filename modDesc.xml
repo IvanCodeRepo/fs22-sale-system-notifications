@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="63">
+    <author>IvanCodeRepo</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Sale System Notifications</en>
+    </title>
+    <description>
+<en>
+<![CDATA[This mod adds a notification when a new offer is available in the used goods trade.
+You can activate or deactivate this feature in the settings.xml.
+]]>
+</en>
+    </description>
+    <iconFilename>modIcon.dds</iconFilename>
+    <multiplayer supported="true" />
+
+    <extraSourceFiles>
+        <sourceFile filename="SaleSystemNotifications.lua" />
+    </extraSourceFiles>
+</modDesc>
+
