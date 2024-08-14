@@ -1,9 +1,9 @@
 <SaleSystemNotifications>
-	<Settings
-	NotifyNewSales="true"
-	/>
+    <Settings
+    NotifyNewSales="true"
+    />
 </SaleSystemNotifications>
 <!--
 Explanations:
-	NotifyNewSales="true" - If set to true, a message will be displayed in the upper right corner of the screen when a new offer is created in the used goods trade.
+    NotifyNewSales="true" - If set to true, a message will be displayed in the upper right corner of the screen when a new offer is created in the used goods trade.
 -->
