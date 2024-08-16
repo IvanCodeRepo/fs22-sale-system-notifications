@@ -1,7 +1,7 @@
 -- Name: SaleSystemNotifications
 -- Author: IvanCodeRepo
 -- GitHub: https://github.com/ivancoderepo
--- Version: 1.0.0.0
+-- Version: 1.1.0.0
 -- Date: Aug. 2024
 
 --[[
