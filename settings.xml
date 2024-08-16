@@ -1,9 +1,13 @@
 <SaleSystemNotifications>
-    <Settings
-    NotifyNewSales="true"
-    />
+	<Settings
+	NotifyNewSales="true"
+	PlaySound="true"
+	SoundVolume="100"
+	/>
 </SaleSystemNotifications>
 <!--
 Explanations:
-    NotifyNewSales="true" - If set to true, a message will be displayed in the upper right corner of the screen when a new offer is created in the used goods trade.
+	NotifyNewSales="true/false" - If set to true, a message will be displayed in the upper right corner of the screen when a new offer is created in the used goods trade.
+	PlaySound="true/false" - If set to true, play a sound when a new offer is created in the used goods trade.
+	SoundVolume="0-100" - Sound volume when a new offer is created in the used goods trade.
 -->
